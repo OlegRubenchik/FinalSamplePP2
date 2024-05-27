@@ -98,6 +98,7 @@ int	Fibonacci(int a,int b,int n) {
 	if (n == 2) return b;
 	if (n > 2) return Fibonacci(a, b, n - 1) + Fibonacci(a, b, n - 2);
 }
+
 void EX2_c() {
 	for (int i = 1; i < 4; i++) {
 		for (int j = 1; j <= 4; j++) {
@@ -176,4 +177,54 @@ void EX3() {
 	for (int i = 0; i < 6; i++) {
 		cout << str[i];
 	}
+}
+
+void EX5() {
+	int A[10][10], B[10][10];
+	for (int i = 0;i < 10;i++) {
+		for (int j = 0;j < 10;j++) {
+			A[i][j] = rand() % 10;
+			B[i][j] = rand() % 10;
+		}
+	}
+	for (int i = 0;i < 10;i++) {
+		for (int j = 0;j < 10;j++) {
+			cout << A[i][j] << ' ';
+		}
+		cout << '\n';
+	}
+	int sum = 0;
+	for (int i = 0;i < 10;i++) {
+		 sum += A[4][i];
+	}
+	int max = -1;
+	for (int i = 0;i < 10;i++) {
+		for (int j = 0;j < 10;j++) {
+			if (max < A[i][j]) max = A[i][j];
+		}
+	}
+	cout << "Sum: " << sum << '\n';
+	cout << "Max: " << max << '\n';
+	bool flag = true;
+	for (int i = 0;i < 10;i++) {
+		for (int j = 0;j < 10;j++) {
+			if (B[i][j] != A[i][j]) flag = false;
+		}
+	}
+	if (flag) cout << "MATCH";
+	else cout << "DISMATCH";
+}
+
+class Pizda {
+public:
+	int p = 5;
+	int popa;
+};
+void govno() {
+	Pizda pizdenka;
+	Pizda* pi;
+	int* point = new int(6);
+	pi = &pizdenka;
+	cout << *point << '\n';
+	cout << pi->p;
 }
